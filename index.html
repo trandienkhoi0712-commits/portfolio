@@ -6,282 +6,154 @@
 <title>Trần Điền Khôi</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:"Segoe UI",system-ui,-apple-system;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-/* ===== ORIGINAL GRADIENT BACKGROUND ===== */
-body{
-  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  color:#fff;
-  text-align:center;
-  padding:70px 18px;
-  min-height:100vh;
-  overflow-x:hidden;
-  position:relative;
+body {
+    background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
 }
 
-@keyframes gradientBG{
-  0%{ background-position: 0% 50%; }
-  50%{ background-position: 100% 50%; }
-  100%{ background-position: 0% 50%; }
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-/* Trống đồng mờ */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background-image:url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Dong_Son_drum_%28Ngoc_Lu%29.jpg/800px-Dong_Son_drum_%28Ngoc_Lu%29.jpg");
-  background-repeat:no-repeat;
-  background-position:center;
-  background-size:800px;
-  opacity:0.07;
-  filter:grayscale(100%) contrast(120%);
-  pointer-events:none;
-  z-index:0;
+/* ===== 2 CÂU NÓI ===== */
+.quotes {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+    padding: 0 40px;
 }
 
-/* ===== QUOTES LÃNH ĐẠO ===== */
-.history-quotes{
-  position:fixed;
-  top:28px;
-  left:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  padding:0 70px;
-  pointer-events:none;
-  z-index:0;
+.quote {
+    width: 45%;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.75);
 }
 
-.history-quotes .q{
-  max-width:40%;
-  font-weight:700;
-  font-size:18px;
-  line-height:1.5;
-  color:rgba(255,255,255,0.20);
-  letter-spacing:0.4px;
+.quote.left {
+    text-align: left;
 }
 
-.history-quotes .left{
-  text-align:left;
+.quote.right {
+    text-align: right;
 }
 
-.history-quotes .right{
-  text-align:right;
+.container {
+    max-width: 800px;
+    margin: auto;
+    animation: fadeIn 1.5s ease;
 }
 
-/* ===== MAIN CONTENT ===== */
-.container{
-  position:relative;
-  z-index:1;
-  max-width:860px;
-  margin:auto;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.avatar{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid rgba(255,255,255,0.95);
-  margin:0 auto 18px auto;
-  box-shadow:0 0 30px rgba(255,255,255,0.25);
-  display:block;
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    margin-bottom: 20px;
+    box-shadow: 0 0 30px rgba(255,255,255,0.3);
 }
 
-h1{
-  font-size:36px;
-  margin-bottom:10px;
+h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
 }
 
-.subtitle{
-  font-size:18px;
-  opacity:0.95;
-  margin-bottom:8px;
+.subtitle {
+    font-size: 18px;
+    opacity: 0.85;
+    margin-bottom: 10px;
 }
 
-/* Vietnam small flag */
-.vn-text{
-  position:relative;
-  display:inline-block;
-  padding:0 6px;
-  font-weight:800;
+.section {
+    margin-top: 30px;
 }
 
-.vn-flag-mini{
-  position:absolute;
-  left:-4px;
-  top:50%;
-  transform:translateY(-50%);
-  width:calc(100% + 10px);
-  height:1.15em;
-  border-radius:8px;
-  background:linear-gradient(180deg, rgba(218,41,28,0.95), rgba(218,41,28,0.8));
-  opacity:0.65;
-  z-index:-1;
+.section h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 5px;
 }
 
-.vn-flag-mini::after{
-  content:"★";
-  position:absolute;
-  left:10px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:0.8em;
-  color:rgba(255,209,0,0.95);
+ul {
+    list-style: none;
+    text-align: left;
+    margin-top: 10px;
 }
 
-/* Contact */
-.contact{
-  margin-top:10px;
-  font-size:16px;
+ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
 }
 
-.contact a{
-  color:#00ffcc;
-  text-decoration:none;
-}
-
-/* Social */
-.social{
-  margin-top:16px;
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-.social a{
-  text-decoration:none;
-  color:#111;
-  background:rgba(255,255,255,0.92);
-  padding:9px 12px;
-  border-radius:10px;
-  font-weight:700;
-  transition:.2s;
-}
-
-.social a:hover{
-  transform:translateY(-2px);
-  opacity:0.9;
-}
-
-/* Service section */
-.section{
-  margin-top:30px;
-  text-align:left;
-  background:rgba(255,255,255,0.07);
-  border:1px solid rgba(255,255,255,0.15);
-  border-radius:16px;
-  padding:18px;
-  backdrop-filter:blur(10px);
-}
-
-.section h2{
-  margin-bottom:12px;
-  border-bottom:1px solid rgba(255,255,255,0.3);
-  padding-bottom:6px;
-}
-
-ul{
-  list-style:none;
-  line-height:1.9;
-}
-
-ul li{
-  padding-left:22px;
-  position:relative;
-}
-
-ul li::before{
-  content:"✓";
-  position:absolute;
-  left:0;
-  color:#00ffcc;
-}
-
-.footer{
-  margin-top:20px;
-  opacity:0.8;
-  font-size:13px;
+ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00ffcc;
 }
 </style>
 </head>
 
 <body>
 
-<div class="history-quotes">
-  <div class="q left">
-    “Giữ vững cốt cách Đông A – dẫn lối bằng bản lĩnh và trí tuệ.”
-  </div>
-  <div class="q right">
-    “Lãnh đạo không dừng ở tầm nhìn, mà tạo ra tiêu chuẩn và kết quả.”
-  </div>
+<!-- ===== 2 CÂU NÓI CỦA BẠN ===== -->
+<div class="quotes">
+    <div class="quote left">
+        “Tự hào dòng máu Đông A – Ngàn năm vẫn cất khúc ca khải hoàn.”
+    </div>
+    <div class="quote right">
+        “Chúng ta là kỹ sư, có chém gió cũng phải ra vận tốc gió.”
+    </div>
 </div>
 
 <div class="container">
 
-<img class="avatar"
-src="https://raw.githubusercontent.com/trandienkhoi0712-commits/portfolio/main/z7570172806721_886131bfa87e24c81ee98037a3d9f29c.jpg"
-alt="Avatar">
+    <!-- THAY LINK ẢNH RAW CỦA BẠN VÀO ĐÂY -->
+    <img class="avatar" src="LINK_ANH_RAW_CUA_BAN" alt="Avatar">
 
-<h1>Trần Điền Khôi</h1>
+    <h1>Trần Điền Khôi</h1>
+    <div class="subtitle">22 tuổi - Việt Nam</div>
+    <div class="subtitle">Kỹ sư Tự Động Hóa</div>
 
-<div class="subtitle">
-22 tuổi -
-<span class="vn-text">
-Việt Nam
-<span class="vn-flag-mini"></span>
-</span>
-</div>
-
-<div class="subtitle">Kỹ sư Tự Động Hóa</div>
-<div class="subtitle">Quê quán: Sóc Trăng</div>
-<div class="subtitle">Nơi ở hiện tại: TP. Cần Thơ</div>
-
-<div class="contact">
-Liên hệ:
-<a href="mailto:trandienkhoi0712@gmail.com">trandienkhoi0712@gmail.com</a>
-</div>
-
-<div class="social">
-<a href="https://www.facebook.com/share/1Cabrk1KnB/?mibextid=wwXIfr" target="_blank">Facebook</a>
-<a href="https://www.instagram.com/_kuui._?igsh=MXJvNXVuOGprb2QwMw%3D%3D&utm_source=qr" target="_blank">Instagram</a>
-<a href="https://www.tiktok.com/@_kuuii._" target="_blank">TikTok</a>
-<a href="https://locket.cam/kuuii" target="_blank">Locket</a>
-</div>
-
-<div class="section">
-<h2>Chuyên môn & Dịch vụ</h2>
-<ul>
-<li>Tư vấn, hỗ trợ đồ án Kỹ thuật cho sinh viên</li>
-<li>Tư vấn, ký gửi cho thuê Phòng trọ TP.HCM & Bình Dương</li>
-<li>Cung cấp ví, thắt lưng, dây đồng hồ da cá sấu</li>
-<li>Ôn cấp tốc THPT QG môn Toán (Đảm bảo đầu ra 8+)</li>
-<li>Nhận kèm ôn HSG cấp Tỉnh/TP & HSG QG môn Lịch Sử</li>
-<li>Thiết kế thương hiệu (Brand Identity Design)</li>
-<li>Cung cấp sỉ & lẻ Sneaker, giày da, dép</li>
-<li>Nhận đặt may in Polo, T-shirt, Local, Streetwear</li>
-<li>Cung cấp phụ kiện thời trang: Túi xách, ví da</li>
-</ul>
-</div>
-
-<div class="footer">
-© <span id="year"></span> Trần Điền Khôi
-</div>
+    <div class="section">
+        <h2>Chuyên môn & Dịch vụ</h2>
+        <ul>
+            <li>Tư vấn, hỗ trợ đồ án Kỹ thuật cho sinh viên</li>
+            <li>Tư vấn, ký gửi cho thuê Phòng trọ TP.HCM & Bình Dương</li>
+            <li>Cung cấp ví, thắt lưng, dây đồng hồ da cá sấu</li>
+            <li>Ôn cấp tốc THPT QG môn Toán (Đảm bảo đầu ra 8+)</li>
+            <li>Nhận kèm ôn HSG cấp Tỉnh/TP & HSG QG môn Lịch Sử</li>
+            <li>Thiết kế thương hiệu (Brand Identity Design)</li>
+            <li>Cung cấp sỉ & lẻ Sneaker, giày da, dép</li>
+            <li>Nhận đặt may in Polo, T-shirt, Local, Streetwear</li>
+            <li>Cung cấp phụ kiện thời trang: Túi xách, ví da</li>
+        </ul>
+    </div>
 
 </div>
-
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>
