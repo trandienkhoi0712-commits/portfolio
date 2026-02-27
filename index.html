@@ -1,322 +1,276 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trần Điền Khôi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trần Điền Khôi</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",system-ui,-apple-system;
+}
 
-    body{
-      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      color: #fff;
-      text-align: center;
-      padding: 50px 18px;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+/* ===== MODERN HISTORICAL BACKGROUND ===== */
+body{
+  min-height:100vh;
+  padding:50px 18px;
+  text-align:center;
+  color:#fff;
+  overflow-x:hidden;
 
-    @keyframes gradientBG{
-      0%{ background-position: 0% 50%; }
-      50%{ background-position: 100% 50%; }
-      100%{ background-position: 0% 50%; }
-    }
+  background:
+    radial-gradient(circle at 20% 20%, rgba(218,41,28,0.25), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255,215,0,0.15), transparent 40%),
+    linear-gradient(180deg, #0b0f17, #111827);
+  position:relative;
+}
 
-    /* --- Minimal historical background + watermark quotes --- */
-    .history-bg{
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-    }
+/* Trống đồng mờ */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Dong_Son_drum_%28Ngoc_Lu%29.jpg/800px-Dong_Son_drum_%28Ngoc_Lu%29.jpg");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:700px;
+  opacity:0.06;
+  filter:grayscale(100%) contrast(120%);
+  pointer-events:none;
+  z-index:0;
+}
 
-    .history-paper{
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(1200px 800px at 15% 10%, rgba(255, 244, 214, 0.06), transparent 60%),
-        radial-gradient(900px 700px at 85% 25%, rgba(255, 232, 175, 0.05), transparent 55%),
-        radial-gradient(1000px 700px at 50% 90%, rgba(255, 220, 140, 0.035), transparent 55%),
-        linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.55));
-      mix-blend-mode: overlay;
-      opacity: 0.9;
-    }
+/* Quotes watermark */
+.history-quotes{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+}
 
-    .history-grain{
-      position: absolute;
-      inset: 0;
-      background-image:
-        repeating-linear-gradient(
-          90deg,
-          rgba(255,255,255,0.03) 0px,
-          rgba(255,255,255,0.03) 1px,
-          transparent 1px,
-          transparent 3px
-        );
-      opacity: 0.14;
-      filter: blur(0.2px);
-    }
+.history-quotes .q{
+  position:absolute;
+  max-width:520px;
+  font-weight:900;
+  color:rgba(255,255,255,0.13);
+  line-height:1.3;
+}
 
-    .history-quotes{
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
+.q.left{
+  left:24px;
+  top:24px;
+  transform:rotate(-2deg);
+  text-align:left;
+}
 
-    .history-quotes .q1,
-    .history-quotes .q2{
-      max-width: min(980px, 92vw);
-      text-align: center;
-      font-weight: 800;
-      letter-spacing: 0.2px;
-      line-height: 1.25;
-      color: rgba(255,255,255,0.10);
-      text-shadow: 0 1px 0 rgba(0,0,0,0.25);
-      user-select: none;
-      filter: blur(0.1px);
-    }
+.q.right{
+  right:24px;
+  bottom:28px;
+  transform:rotate(1.5deg);
+  text-align:right;
+}
 
-    .history-quotes .q1{
-      font-size: clamp(18px, 2.2vw, 34px);
-      transform: rotate(-2deg);
-      margin-bottom: 22px;
-    }
+/* ===== MAIN CONTENT ===== */
+.container{
+  position:relative;
+  z-index:1;
+  max-width:860px;
+  margin:auto;
+}
 
-    .history-quotes .q2{
-      font-size: clamp(14px, 1.6vw, 22px);
-      transform: translateY(90px) rotate(1.2deg);
-      color: rgba(255,255,255,0.09);
-    }
+.avatar{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid rgba(255,255,255,0.95);
+  margin:0 auto 18px auto;
+  box-shadow:0 0 30px rgba(255,255,255,0.25);
+  display:block;
+}
 
-    .container{
-      position: relative;
-      z-index: 1;
-      max-width: 860px;
-      margin: auto;
-      animation: fadeIn 1.2s ease;
-    }
+h1{
+  font-size:34px;
+  margin-bottom:10px;
+}
 
-    @keyframes fadeIn{
-      from{ opacity: 0; transform: translateY(24px); }
-      to{ opacity: 1; transform: translateY(0); }
-    }
+.subtitle{
+  font-size:18px;
+  opacity:0.9;
+  margin-bottom:8px;
+}
 
-    .avatar{
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid rgba(255,255,255,0.95);
-      margin: 0 auto 18px auto;
-      box-shadow: 0 0 30px rgba(255,255,255,0.25);
-      display:block;
-      background: rgba(255,255,255,0.08);
-    }
+/* Vietnam small flag */
+.vn-text{
+  position:relative;
+  display:inline-block;
+  padding:0 6px;
+  font-weight:800;
+}
 
-    h1{
-      font-size: 34px;
-      margin-bottom: 10px;
-      letter-spacing: .2px;
-    }
+.vn-flag-mini{
+  position:absolute;
+  left:-4px;
+  top:50%;
+  transform:translateY(-50%);
+  width:calc(100% + 10px);
+  height:1.15em;
+  border-radius:8px;
+  background:linear-gradient(180deg, rgba(218,41,28,0.95), rgba(218,41,28,0.75));
+  opacity:0.55;
+  z-index:-1;
+}
 
-    .subtitle{
-      font-size: 18px;
-      opacity: 0.85;
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
+.vn-flag-mini::after{
+  content:"★";
+  position:absolute;
+  left:10px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:0.8em;
+  color:rgba(255,209,0,0.95);
+}
 
-    .contact{
-      margin-top: 10px;
-      font-size: 16px;
-      opacity: 0.9;
-    }
+.contact{
+  margin-top:10px;
+  font-size:16px;
+}
 
-    .contact a{
-      color: #00ffcc;
-      text-decoration: none;
-      border-bottom: 1px dashed rgba(0,255,204,0.5);
-    }
+.contact a{
+  color:#00ffcc;
+  text-decoration:none;
+}
 
-    .contact a:hover{
-      border-bottom-color: rgba(0,255,204,0.9);
-    }
+.social{
+  margin-top:16px;
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
 
-    .section{
-      margin-top: 30px;
-      text-align: left;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      padding: 18px;
-      backdrop-filter: blur(8px);
-    }
+.social a{
+  text-decoration:none;
+  color:#111;
+  background:rgba(255,255,255,0.9);
+  padding:9px 12px;
+  border-radius:10px;
+  font-weight:700;
+  transition:.2s;
+}
 
-    .section h2{
-      font-size: 20px;
-      margin-bottom: 12px;
-      border-bottom: 1px solid rgba(255,255,255,0.22);
-      padding-bottom: 8px;
-    }
+.social a:hover{
+  transform:translateY(-2px);
+  opacity:0.9;
+}
 
-    ul{
-      list-style: none;
-      margin-top: 8px;
-      line-height: 1.9;
-    }
+.section{
+  margin-top:30px;
+  text-align:left;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:18px;
+  backdrop-filter:blur(8px);
+}
 
-    ul li{
-      margin-bottom: 8px;
-      padding-left: 22px;
-      position: relative;
-    }
+.section h2{
+  margin-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,0.22);
+  padding-bottom:6px;
+}
 
-    ul li::before{
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: #00ffcc;
-      font-weight: 700;
-    }
+ul{
+  list-style:none;
+  line-height:1.9;
+}
 
-    .social{
-      margin-top: 16px;
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+ul li{
+  padding-left:22px;
+  position:relative;
+}
 
-    .social a{
-      text-decoration: none;
-      color: #111;
-      background: rgba(255,255,255,0.92);
-      padding: 9px 12px;
-      border-radius: 10px;
-      font-weight: 700;
-      transition: transform .15s ease, opacity .15s ease;
-    }
+ul li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:#00ffcc;
+}
 
-    .social a:hover{
-      transform: translateY(-1px);
-      opacity: 0.92;
-    }
-
-    /* Việt Nam badge + flag */
-    .vn-badge{
-      position: relative;
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: 999px;
-      overflow: hidden;
-      font-weight: 800;
-      border: 1px solid rgba(255,255,255,0.18);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.25);
-    }
-    .vn-badge > span.vn-flag{
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(218, 41, 28, 0.95), rgba(218, 41, 28, 0.75));
-      opacity: 0.75;
-      z-index: -1;
-    }
-    .vn-badge > span.vn-flag::after{
-      content: "★";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      color: rgba(255, 209, 0, 0.95);
-      font-size: 14px;
-      text-shadow: 0 0 10px rgba(255, 209, 0, 0.35);
-    }
-
-    .hint{
-      margin-top: 14px;
-      font-size: 13px;
-      opacity: .7;
-    }
-  </style>
+.footer{
+  margin-top:20px;
+  opacity:0.7;
+  font-size:13px;
+}
+</style>
 </head>
 
 <body>
-  <!-- Historical minimal background -->
-  <div class="history-bg" aria-hidden="true">
-    <div class="history-paper"></div>
-    <div class="history-grain"></div>
-    <div class="history-quotes">
-      <div class="q1">Tự hào dòng máu Đông A - Ngàn năm vẫn cất khúc ca khải hoàn</div>
-      <div class="q2">Chúng ta là kỹ sư có chém gió cũng phải ra vận tốc gió</div>
-    </div>
-  </div>
 
-  <div class="container">
+<div class="history-quotes">
+  <div class="q left">“Tự hào dòng máu Đông A - Ngàn năm vẫn cất khúc ca khải hoàn”</div>
+  <div class="q right">“Chúng ta là kỹ sư có chém gió cũng phải ra vận tốc gió”</div>
+</div>
 
-    <!-- Ảnh đại diện (raw GitHub) -->
-    <img
-      class="avatar"
-      src="https://raw.githubusercontent.com/trandienkhoi0712-commits/portfolio/main/z7570172806721_886131bfa87e24c81ee98037a3d9f29c.jpg"
-      alt="Ảnh đại diện"
-    />
+<div class="container">
 
-    <h1>Trần Điền Khôi</h1>
+<img class="avatar"
+src="https://raw.githubusercontent.com/trandienkhoi0712-commits/portfolio/main/z7570172806721_886131bfa87e24c81ee98037a3d9f29c.jpg"
+alt="Avatar">
 
-    <div class="subtitle">
-      22 tuổi -
-      <span class="vn-badge">
-        Việt Nam
-        <span class="vn-flag" aria-hidden="true"></span>
-      </span>
-    </div>
+<h1>Trần Điền Khôi</h1>
 
-    <div class="subtitle">Kỹ sư Tự Động Hóa</div>
-    <div class="subtitle">Quê quán: Sóc Trăng</div>
-    <div class="subtitle">Nơi ở hiện tại: TP. Cần Thơ</div>
+<div class="subtitle">
+22 tuổi -
+<span class="vn-text">
+Việt Nam
+<span class="vn-flag-mini"></span>
+</span>
+</div>
 
-    <div class="contact">
-      Liên hệ:
-      <a href="mailto:trandienkhoi0712@gmail.com">trandienkhoi0712@gmail.com</a>
-    </div>
+<div class="subtitle">Kỹ sư Tự Động Hóa</div>
+<div class="subtitle">Quê quán: Sóc Trăng</div>
+<div class="subtitle">Nơi ở hiện tại: TP. Cần Thơ</div>
 
-    <!-- Mạng xã hội -->
-    <div class="social">
-      <a href="https://www.facebook.com/share/1Cabrk1KnB/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a>
-      <a href="https://www.instagram.com/_kuui._?igsh=MXJvNXVuOGprb2QwMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="https://www.tiktok.com/@_kuuii._" target="_blank" rel="noopener noreferrer">TikTok</a>
-      <a href="https://locket.cam/kuuii" target="_blank" rel="noopener noreferrer">Locket</a>
-    </div>
+<div class="contact">
+Liên hệ:
+<a href="mailto:trandienkhoi0712@gmail.com">trandienkhoi0712@gmail.com</a>
+</div>
 
-    <!-- Dịch vụ -->
-    <div class="section">
-      <h2>Chuyên môn & Dịch vụ</h2>
-      <ul>
-        <li>Tư vấn, hỗ trợ đồ án Kỹ thuật cho sinh viên</li>
-        <li>Tư vấn, ký gửi cho thuê Phòng trọ khu vực TP. Hồ Chí Minh và Bình Dương</li>
-        <li>Cung cấp ví, thắt lưng, dây đồng hồ da cá sấu</li>
-        <li>Ôn cấp tốc THPT QG môn Toán (Đảm bảo đầu ra 8+)</li>
-        <li>Nhận kèm ôn HSG cấp Tỉnh/TP & HSG QG môn Lịch Sử</li>
-        <li>Thiết kế thương hiệu (Brand Identity Design)</li>
-        <li>Cung cấp sỉ và lẻ Sneaker, giày da, dép,...</li>
-        <li>Nhận đặt may in các mẫu thời trang Polo, T-shirt, Local, Streetwear,...</li>
-        <li>Cung cấp sỉ và lẻ phụ kiện thời trang: Túi xách, ví da,...</li>
-      </ul>
-    </div>
+<div class="social">
+<a href="https://www.facebook.com/share/1Cabrk1KnB/?mibextid=wwXIfr" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/_kuui._?igsh=MXJvNXVuOGprb2QwMw%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+<a href="https://www.tiktok.com/@_kuuii._" target="_blank">TikTok</a>
+<a href="https://locket.cam/kuuii" target="_blank">Locket</a>
+</div>
 
-    <div class="hint">© <span id="y"></span> Trần Điền Khôi • Built with GitHub Pages</div>
-  </div>
+<div class="section">
+<h2>Chuyên môn & Dịch vụ</h2>
+<ul>
+<li>Tư vấn, hỗ trợ đồ án Kỹ thuật cho sinh viên</li>
+<li>Tư vấn, ký gửi cho thuê Phòng trọ TP.HCM & Bình Dương</li>
+<li>Cung cấp ví, thắt lưng, dây đồng hồ da cá sấu</li>
+<li>Ôn cấp tốc THPT QG môn Toán (Đảm bảo đầu ra 8+)</li>
+<li>Nhận kèm ôn HSG cấp Tỉnh/TP & HSG QG môn Lịch Sử</li>
+<li>Thiết kế thương hiệu (Brand Identity Design)</li>
+<li>Cung cấp sỉ & lẻ Sneaker, giày da, dép</li>
+<li>Nhận đặt may in Polo, T-shirt, Local, Streetwear</li>
+<li>Cung cấp phụ kiện thời trang: Túi xách, ví da</li>
+</ul>
+</div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<div class="footer">
+© <span id="year"></span> Trần Điền Khôi
+</div>
+
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
