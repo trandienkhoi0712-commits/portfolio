@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tài liệu lịch sử</title>
+  <style>
+    body{font-family:Segoe UI,system-ui; margin:0; padding:28px; background:#0b0f17; color:#e5e7eb;}
+    a{color:#38bdf8; text-decoration:none;}
+    .wrap{max-width:900px; margin:auto;}
+    .card{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:18px;}
+    ul{line-height:1.9;}
+    .note{opacity:.8;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p><a href="/">← Quay về trang chủ</a></p>
+    <h1>Tài liệu lịch sử</h1>
+    <p class="note">Bạn có thể upload PDF lên repo và dán link “raw” hoặc link GitHub vào đây.</p>
+
+    <div class="card">
+      <ul>
+        <li>Tài liệu 1 — <a href="#">Link PDF</a></li>
+        <li>Tài liệu 2 — <a href="#">Link PDF</a></li>
+        <li>Tài liệu 3 — <a href="#">Link PDF</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
