@@ -1,124 +1,211 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trần Điền Khôi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trần Điền Khôi</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    }
 
-body {
-    background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-}
+    body{
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      text-align: center;
+      padding: 50px 18px;
+      min-height: 100vh;
+    }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+    @keyframes gradientBG{
+      0%{ background-position: 0% 50%; }
+      50%{ background-position: 100% 50%; }
+      100%{ background-position: 0% 50%; }
+    }
 
-.container {
-    max-width: 800px;
-    margin: auto;
-    animation: fadeIn 1.5s ease;
-}
+    .container{
+      max-width: 860px;
+      margin: auto;
+      animation: fadeIn 1.2s ease;
+    }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+    @keyframes fadeIn{
+      from{ opacity: 0; transform: translateY(24px); }
+      to{ opacity: 1; transform: translateY(0); }
+    }
 
-.avatar {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid white;
-    margin-bottom: 20px;
-    box-shadow: 0 0 30px rgba(255,255,255,0.3);
-}
+    .avatar{
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.95);
+      margin: 0 auto 18px auto;
+      box-shadow: 0 0 30px rgba(255,255,255,0.25);
+      display:block;
+      background: rgba(255,255,255,0.08);
+    }
 
-h1 {
-    font-size: 34px;
-    margin-bottom: 10px;
-}
+    h1{
+      font-size: 34px;
+      margin-bottom: 10px;
+      letter-spacing: .2px;
+    }
 
-.subtitle {
-    font-size: 18px;
-    opacity: 0.8;
-    margin-bottom: 30px;
-}
+    .subtitle{
+      font-size: 18px;
+      opacity: 0.85;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
 
-.section {
-    margin-top: 30px;
-}
+    .contact{
+      margin-top: 10px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
 
-.section h2 {
-    margin-bottom: 15px;
-    font-size: 22px;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-    padding-bottom: 5px;
-}
+    .contact a{
+      color: #00ffcc;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(0,255,204,0.5);
+    }
 
-ul {
-    list-style: none;
-    text-align: left;
-    margin-top: 10px;
-}
+    .contact a:hover{
+      border-bottom-color: rgba(0,255,204,0.9);
+    }
 
-ul li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
+    .section{
+      margin-top: 30px;
+      text-align: left;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 18px;
+      backdrop-filter: blur(8px);
+    }
 
-ul li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #00ffcc;
-}
-</style>
+    .section h2{
+      font-size: 20px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.22);
+      padding-bottom: 8px;
+    }
+
+    ul{
+      list-style: none;
+      margin-top: 8px;
+      line-height: 1.9;
+    }
+
+    ul li{
+      margin-bottom: 8px;
+      padding-left: 22px;
+      position: relative;
+    }
+
+    ul li::before{
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #00ffcc;
+      font-weight: 700;
+    }
+
+    .pages, .social{
+      margin-top: 16px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .pages a, .social a{
+      text-decoration: none;
+      color: #111;
+      background: rgba(255,255,255,0.92);
+      padding: 9px 12px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+
+    .pages a:hover, .social a:hover{
+      transform: translateY(-1px);
+      opacity: 0.92;
+    }
+
+    .hint{
+      margin-top: 14px;
+      font-size: 13px;
+      opacity: .7;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
 
-<div class="container">
-
-    <!-- THAY LINK ẢNH RAW CỦA BẠN VÀO ĐÂY -->
-    <img class="avatar" src="https://raw.githubusercontent.com/trandienkhoi0712-commits/portfolio/main/z7570172806721_886131bfa87e24c81ee98037a3d9f29c.jpg" alt="Avatar">
+    <!-- Ảnh đại diện (raw GitHub) -->
+    <img
+      class="avatar"
+      src="https://raw.githubusercontent.com/trandienkhoi0712-commits/portfolio/main/z7570172806721_886131bfa87e24c81ee98037a3d9f29c.jpg"
+      alt="Ảnh đại diện"
+    />
 
     <h1>Trần Điền Khôi</h1>
     <div class="subtitle">22 tuổi - Việt Nam</div>
     <div class="subtitle">Kỹ sư Tự Động Hóa</div>
+    <div class="subtitle">Quê quán: Sóc Trăng</div>
+    <div class="subtitle">Nơi ở hiện tại: TP. Cần Thơ</div>
 
-    <div class="section">
-        <h2>Chuyên môn & Dịch vụ</h2>
-        <ul>
-            <li>Tư vấn, hỗ trợ đồ án Kỹ thuật cho sinh viên</li>
-            <li>Tư vấn, ký gửi cho thuê Phòng trọ TP.HCM & Bình Dương</li>
-            <li>Cung cấp ví, thắt lưng, dây đồng hồ da cá sấu</li>
-            <li>Ôn cấp tốc THPT QG môn Toán (Đảm bảo đầu ra 8+)</li>
-            <li>Nhận kèm ôn HSG cấp Tỉnh/TP & HSG QG môn Lịch Sử</li>
-            <li>Thiết kế thương hiệu (Brand Identity Design)</li>
-            <li>Cung cấp sỉ & lẻ Sneaker, giày da, dép</li>
-            <li>Nhận đặt may in Polo, T-shirt, Local, Streetwear</li>
-            <li>Cung cấp phụ kiện thời trang: Túi xách, ví da</li>
-        </ul>
+    <div class="contact">
+      Liên hệ:
+      <a href="mailto:trandienkhoi0712@gmail.com">trandienkhoi0712@gmail.com</a>
     </div>
 
-</div>
+    <!-- Trang con -->
+    <div class="pages">
+      <a href="/phan-mem-ky-thuat.html">Phần mềm kỹ thuật</a>
+      <a href="/anh.html">Ảnh</a>
+      <a href="/tai-lieu-lich-su.html">Tài liệu lịch sử</a>
+    </div>
 
+    <!-- Mạng xã hội -->
+    <div class="social">
+      <a href="https://www.facebook.com/share/1Cabrk1KnB/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://www.instagram.com/_kuui._?igsh=MXJvNXVuOGprb2QwMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.tiktok.com/@_kuuii._" target="_blank" rel="noopener noreferrer">TikTok</a>
+      <a href="https://locket.cam/kuuii" target="_blank" rel="noopener noreferrer">Locket</a>
+    </div>
+
+    <!-- Dịch vụ -->
+    <div class="section">
+      <h2>Chuyên môn & Dịch vụ</h2>
+      <ul>
+        <li>Tư vấn, hỗ trợ đồ án Kỹ thuật cho sinh viên</li>
+        <li>Tư vấn, ký gửi cho thuê Phòng trọ khu vực TP. Hồ Chí Minh và Bình Dương</li>
+        <li>Cung cấp ví, thắt lưng, dây đồng hồ da cá sấu</li>
+        <li>Ôn cấp tốc THPT QG môn Toán (Đảm bảo đầu ra 8+)</li>
+        <li>Nhận kèm ôn HSG cấp Tỉnh/TP & HSG QG môn Lịch Sử</li>
+        <li>Thiết kế thương hiệu (Brand Identity Design)</li>
+        <li>Cung cấp sỉ và lẻ Sneaker, giày da, dép,...</li>
+        <li>Nhận đặt may in các mẫu thời trang Polo, T-shirt, Local, Streetwear,...</li>
+        <li>Cung cấp sỉ và lẻ phụ kiện thời trang: Túi xách, ví da,...</li>
+      </ul>
+    </div>
+
+    <div class="hint">© <span id="y"></span> Trần Điền Khôi • Built with GitHub Pages</div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
