@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ảnh</title>
+  <style>
+    body{font-family:Segoe UI,system-ui; margin:0; padding:28px; background:#0b0f17; color:#e5e7eb;}
+    a{color:#38bdf8; text-decoration:none;}
+    .wrap{max-width:1000px; margin:auto;}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px;}
+    .img{width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px; border:1px solid rgba(255,255,255,.12);}
+    .hint{opacity:.8;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p><a href="/">← Quay về trang chủ</a></p>
+    <h1>Ảnh</h1>
+    <p class="hint">Bạn có thể upload ảnh vào repo và dán link vào các thẻ &lt;img&gt; dưới đây.</p>
+
+    <div class="grid">
+      <img class="img" src="https://images.unsplash.com/photo-1520975958225-9ac16b1c5842?auto=format&fit=crop&w=600&q=80" alt="Ảnh 1">
+      <img class="img" src="https://images.unsplash.com/photo-1520975958225-9ac16b1c5842?auto=format&fit=crop&w=600&q=80" alt="Ảnh 2">
+      <img class="img" src="https://images.unsplash.com/photo-1520975958225-9ac16b1c5842?auto=format&fit=crop&w=600&q=80" alt="Ảnh 3">
+      <img class="img" src="https://images.unsplash.com/photo-1520975958225-9ac16b1c5842?auto=format&fit=crop&w=600&q=80" alt="Ảnh 4">
+    </div>
+  </div>
+</body>
+</html>
