@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phần mềm kỹ thuật</title>
+  <style>
+    body{font-family:Segoe UI,system-ui; margin:0; padding:28px; background:#0b0f17; color:#e5e7eb;}
+    a{color:#38bdf8; text-decoration:none;}
+    .wrap{max-width:900px; margin:auto;}
+    .card{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:18px;}
+    ul{line-height:1.9;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p><a href="/">← Quay về trang chủ</a></p>
+    <h1>Phần mềm kỹ thuật</h1>
+    <div class="card">
+      <p>Danh sách phần mềm / tool bạn muốn chia sẻ. (Bạn có thể thêm link tải, hướng dẫn, video, v.v.)</p>
+      <ul>
+        <li>Tool 1 — mô tả ngắn — <a href="#">Link</a></li>
+        <li>Tool 2 — mô tả ngắn — <a href="#">Link</a></li>
+        <li>Tool 3 — mô tả ngắn — <a href="#">Link</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
