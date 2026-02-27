@@ -7,108 +7,133 @@
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-    background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    color: white;
-    text-align: center;
-    padding: 70px 20px;
-    min-height: 100vh;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+  min-height: 100vh;
 }
 
 @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ===== 2 CÂU NÓI ===== */
 .quotes {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: 0 auto 40px auto;
-    padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto 40px auto;
+  padding: 0 40px;
+  gap: 20px;
 }
 
 .quote {
-    width: 45%;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.5;
-    color: rgba(255,255,255,0.75);
+  width: 45%;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.75);
 }
 
 .quote.left { text-align: left; }
 .quote.right { text-align: right; }
 
 .container {
-    max-width: 800px;
-    margin: auto;
-    animation: fadeIn 1.5s ease;
+  max-width: 800px;
+  margin: auto;
+  animation: fadeIn 1.5s ease;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .avatar {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid white;
-    margin-bottom: 20px;
-    box-shadow: 0 0 30px rgba(255,255,255,0.3);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  margin-bottom: 20px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.3);
 }
 
 h1 {
-    font-size: 34px;
-    margin-bottom: 10px;
+  font-size: 34px;
+  margin-bottom: 10px;
 }
 
 .subtitle {
-    font-size: 18px;
-    opacity: 0.85;
-    margin-bottom: 8px;
+  font-size: 18px;
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+/* ===== MẠNG XÃ HỘI ===== */
+.social {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social a {
+  text-decoration: none;
+  color: #111;
+  background: rgba(255,255,255,0.92);
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.social a:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
 .section {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .section h2 {
-    margin-bottom: 15px;
-    font-size: 22px;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-    padding-bottom: 5px;
+  margin-bottom: 15px;
+  font-size: 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 5px;
 }
 
 ul {
-    list-style: none;
-    text-align: left;
-    margin-top: 10px;
+  list-style: none;
+  text-align: left;
+  margin-top: 10px;
 }
 
 ul li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
 }
 
 ul li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #00ffcc;
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00ffcc;
 }
 </style>
 </head>
@@ -117,43 +142,49 @@ ul li::before {
 
 <!-- ===== 2 CÂU NÓI ===== -->
 <div class="quotes">
-    <div class="quote left">
-        “Tự hào dòng máu Đông A 
-       - Ngàn năm vẫn cất khúc ca khải hoàn.”
-    </div>
-    <div class="quote right">
-        “Chúng ta là kỹ sư, 
-        có chém gió cũng phải ra vận tốc gió.”
-    </div>
+  <div class="quote left">
+    “Tự hào dòng máu Đông A – Ngàn năm vẫn cất khúc ca khải hoàn.”
+  </div>
+  <div class="quote right">
+    “Chúng ta là kỹ sư, có chém gió cũng phải ra vận tốc gió.”
+  </div>
 </div>
 
 <div class="container">
 
-    <img class="avatar"
+  <img class="avatar"
     src="https://raw.githubusercontent.com/trandienkhoi0712-commits/portfolio/main/z7570172806721_886131bfa87e24c81ee98037a3d9f29c.jpg"
     alt="Avatar">
 
-    <h1>Trần Điền Khôi</h1>
+  <h1>Trần Điền Khôi</h1>
 
-    <div class="subtitle">22 tuổi - Việt Nam</div>
-    <div class="subtitle">Kỹ sư Tự Động Hóa</div>
-    <div class="subtitle">Quê quán: Sóc Trăng</div>
-    <div class="subtitle">Nơi ở hiện tại: TP. Cần Thơ</div>
+  <div class="subtitle">22 tuổi - Việt Nam</div>
+  <div class="subtitle">Kỹ sư Tự Động Hóa</div>
+  <div class="subtitle">Quê quán: Sóc Trăng</div>
+  <div class="subtitle">Nơi ở hiện tại: TP. Cần Thơ</div>
 
-    <div class="section">
-        <h2>Chuyên môn & Dịch vụ</h2>
-        <ul>
-            <li>Tư vấn, hỗ trợ đồ án Kỹ thuật cho sinh viên</li>
-            <li>Tư vấn, ký gửi cho thuê Phòng trọ TP.HCM & Bình Dương</li>
-            <li>Cung cấp ví, thắt lưng, dây đồng hồ da cá sấu</li>
-            <li>Ôn cấp tốc THPT QG môn Toán (Đảm bảo đầu ra 8+)</li>
-            <li>Nhận kèm ôn HSG cấp Tỉnh/TP & HSG QG môn Lịch Sử</li>
-            <li>Thiết kế thương hiệu (Brand Identity Design)</li>
-            <li>Cung cấp sỉ & lẻ Sneaker, giày da, dép</li>
-            <li>Nhận đặt may in Polo, T-shirt, Local, Streetwear</li>
-            <li>Cung cấp phụ kiện thời trang: Túi xách, ví da</li>
-        </ul>
-    </div>
+  <!-- ===== MẠNG XÃ HỘI (LINK CỦA BẠN) ===== -->
+  <div class="social">
+    <a href="https://www.facebook.com/share/1Cabrk1KnB/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://www.instagram.com/_kuui._?igsh=MXJvNXVuOGprb2QwMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="https://www.tiktok.com/@_kuuii._" target="_blank" rel="noopener noreferrer">TikTok</a>
+    <a href="https://locket.cam/kuuii" target="_blank" rel="noopener noreferrer">Locket</a>
+  </div>
+
+  <div class="section">
+    <h2>Chuyên môn & Dịch vụ</h2>
+    <ul>
+      <li>Tư vấn, hỗ trợ đồ án Kỹ thuật cho sinh viên</li>
+      <li>Tư vấn, ký gửi cho thuê Phòng trọ TP.HCM & Bình Dương</li>
+      <li>Cung cấp ví, thắt lưng, dây đồng hồ da cá sấu</li>
+      <li>Ôn cấp tốc THPT QG môn Toán (Đảm bảo đầu ra 8+)</li>
+      <li>Nhận kèm ôn HSG cấp Tỉnh/TP & HSG QG môn Lịch Sử</li>
+      <li>Thiết kế thương hiệu (Brand Identity Design)</li>
+      <li>Cung cấp sỉ & lẻ Sneaker, giày da, dép</li>
+      <li>Nhận đặt may in Polo, T-shirt, Local, Streetwear</li>
+      <li>Cung cấp phụ kiện thời trang: Túi xách, ví da</li>
+    </ul>
+  </div>
 
 </div>
 
