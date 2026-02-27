@@ -1,29 +1,86 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phần mềm kỹ thuật</title>
-  <style>
-    body{font-family:Segoe UI,system-ui; margin:0; padding:28px; background:#0b0f17; color:#e5e7eb;}
-    a{color:#38bdf8; text-decoration:none;}
-    .wrap{max-width:900px; margin:auto;}
-    .card{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:18px;}
-    ul{line-height:1.9;}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phần mềm kỹ thuật</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI,system-ui;
+  background:linear-gradient(-45deg,#0f0c29,#302b63,#24243e,#000);
+  background-size:400% 400%;
+  animation:bg 15s ease infinite;
+  color:#fff;
+  padding:40px 20px;
+}
+@keyframes bg{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.card{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:20px;
+  backdrop-filter:blur(10px);
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.card a{
+  color:#00ffcc;
+  text-decoration:none;
+}
+
+.back{
+  display:inline-block;
+  margin-bottom:20px;
+  color:#00ffcc;
+  text-decoration:none;
+}
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <p><a href="/">← Quay về trang chủ</a></p>
-    <h1>Phần mềm kỹ thuật</h1>
-    <div class="card">
-      <p>Danh sách phần mềm / tool bạn muốn chia sẻ. (Bạn có thể thêm link tải, hướng dẫn, video, v.v.)</p>
-      <ul>
-        <li>Tool 1 — mô tả ngắn — <a href="#">Link</a></li>
-        <li>Tool 2 — mô tả ngắn — <a href="#">Link</a></li>
-        <li>Tool 3 — mô tả ngắn — <a href="#">Link</a></li>
-      </ul>
-    </div>
-  </div>
+<div class="container">
+<a class="back" href="/">← Quay về trang chủ</a>
+<h1>Phần mềm kỹ thuật</h1>
+
+<div class="card">
+  <h3>AutoCAD</h3>
+  <p>Phần mềm thiết kế kỹ thuật 2D/3D.</p>
+  <a href="#">Link tải / hướng dẫn</a>
+</div>
+
+<div class="card">
+  <h3>PLC Simulation</h3>
+  <p>Mô phỏng lập trình PLC cho sinh viên.</p>
+  <a href="#">Link tải / hướng dẫn</a>
+</div>
+
+<div class="card">
+  <h3>Tool hỗ trợ đồ án</h3>
+  <p>Các tool phục vụ làm báo cáo và mô phỏng.</p>
+  <a href="#">Link tải</a>
+</div>
+
+</div>
 </body>
 </html>
